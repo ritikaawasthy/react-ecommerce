@@ -1,0 +1,34 @@
+.list-container{
+ padding: 0.5rem;
+}
+
+.list-stacked{
+  display: flex;
+  flex-flow: column wrap;
+  width:100%;
+  gap:0.5rem;
+}
+
+.list-stacked>li{
+  padding:0.5rem;
+  display : flex;
+  gap:0.5rem;
+  align-items: center;
+}
+
+.list-stacked.bordered>li{
+    border: 1px solid ;
+}
+
+.list-stacked>li:hover{
+ box-shadow: 0.1px 0.1px 2px 2px ;
+}
+
+.list-inline{
+ display: flex;
+ gap: 2rem;
+}
+
+.list-icon-end{
+  margin-left:auto;
+}

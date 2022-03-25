@@ -1,0 +1,81 @@
+.prim{
+ background-color: var(--prim-col);
+ color: var(--sec-col);
+}
+
+.sec{
+ background-color: var(--sec-col);
+ color: var(--prim-col);
+}
+
+.prim-c{
+   color: var(--prim-col);
+}
+
+.prim-bg{
+  background-color: var(--prim-col);
+}
+
+.prim-li{
+  background-color: var(--prim-li);
+  color:  var(--prim-col);
+}
+
+.sec-c{
+   color: var(--sec-col);
+}
+
+.sec-bg{
+  background-color: var(--sec-col);
+}
+
+
+.red{
+  background-color: var(--red-li);
+  color: var(--red);
+}
+.red-c{
+    color: var(--red);
+}
+
+.yellow{
+  background-color: var(--yellow-li);
+  color: var(--yellow);
+  /* border: solid 4px var(--yellow); */
+}
+
+.green{
+  background-color: var(--green-li);
+  color: var(--green);
+  /* border: solid 4px var(--green); */
+}
+
+.green-c{
+    color: var(--green);
+}
+
+.blue{
+  background-color: var(--blue-li);
+  color: var(--blue);
+}
+
+.palesilver-li{
+  background-color: var(--palesilver-li);
+  color: var(--sec);
+}
+
+.palesilver-c{
+  color: var(--palesilver);
+}
+
+.white-c{
+  color: white;
+}
+
+.white-bg{
+  background-color: white;
+}
+
+.white-trans-bg{
+  background-color: var(--white-trans);
+}

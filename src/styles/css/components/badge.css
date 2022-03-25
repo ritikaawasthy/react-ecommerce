@@ -1,0 +1,45 @@
+.badge{
+  border-radius: 50%;
+  height:1rem;
+  width:1rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.badge-text{
+  padding: 0.2rem 0.4rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+}
+
+.badge.xs{
+  height:0.5rem;
+  width: 0.5rem;
+}
+
+.badge.m{
+  height:1.5rem;
+  width: 1.5rem;
+}
+.badge.l{
+  height:2rem;
+  width: 2rem;
+}
+
+.badge-cont>.badge{
+ position: relative;
+ z-index: 2;
+ left:80%;
+ top:20%;
+
+}
+
+.badge-icon{
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}

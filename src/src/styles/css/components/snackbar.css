@@ -1,0 +1,16 @@
+.hide{
+  display: none;
+}
+
+.snackbar{
+  width: 20rem;
+  background-color: var(--sec-col);
+  color: var(--prim-col);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.snackbar-body{
+  display: flex;
+  align-items: center;
+}

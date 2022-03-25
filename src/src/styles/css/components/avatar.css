@@ -1,0 +1,23 @@
+.avatar{
+  border: solid 2px var(--prim-col);
+}
+
+.avatar.xs{
+  height: 2rem;
+  width: 2rem;
+}
+
+.avatar.s{
+  height: 4rem;
+  width: 4rem;
+}
+
+.avatar.m{
+  height: 6rem;
+  width: 6rem;
+}
+
+.avatar.l{
+  height: 8rem;
+  width: 8rem;
+}

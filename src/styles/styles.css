@@ -45,9 +45,6 @@ a {
   background-color: var(--primary-light);
 }
 
-#side-menu:li) {
-  color: var(--primary);
-}
 
 #side-menu-filter {
   float: right;
@@ -62,7 +59,7 @@ a {
   background-color: var(--primary-light);
 }
 
-#side-menu:li) {
+#side-menu:li{
   color: var(--primary);
 }
 

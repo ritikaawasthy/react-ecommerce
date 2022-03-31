@@ -1,5 +1,3 @@
-import "./App.css";
-// import {Carousel, Navbar, Footer, Filter, SideBar, Cart, Wishlist} from "./components/index";
 import {SignupPage} from "./pages/index.js";
 import {
   BrowserRouter,
@@ -14,6 +12,7 @@ function App() {
       </header>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<App />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
         </Routes>
       </BrowserRouter>

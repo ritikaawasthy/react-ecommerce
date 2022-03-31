@@ -5,6 +5,7 @@ import {
 from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAnglesLeft, faAnglesRight} from '@fortawesome/free-solid-svg-icons';
+import './carousel.css';
 
 function Carousel(props) {
   const slideList = props.slideList;
@@ -45,7 +46,7 @@ function Carousel(props) {
         <article className="container fl-center">
           <div className="card">
             <div className="background">
-              <img src={slide.imgSrc} alt="" id="landing-img" className="background slider-img"></img>
+              <img src={slide.imgSrc} alt="" className="background carouselMain"></img>
             </div>
             <div className="card-content inline center-top">
               <p className="primary-col white-trans-bg fw-b f-xxl start">Women Store
@@ -70,7 +71,7 @@ function Carousel(props) {
         <div className="container fl-end">
           <article className="grid-two-layout-left">
             <div className="card w-m">
-              <img src={slide.imgSrcLeft} alt="" className="background slider-img"></img>
+              <img src={slide.imgSrcLeft} alt="" className="background carouselProd"></img>
               <div className="card-content stacked">
                 <h3 className="fw-li">
                   <a href="templates/product.html">Women</a>
@@ -84,7 +85,7 @@ function Carousel(props) {
         <div className="container fl-start">
           <article className="grid-two-layout-right">
             <div className="card w-m">
-              <img src={slide.imgSrcRight} alt="" className="background"></img>
+              <img src={slide.imgSrcRight} alt="" className="background carouselProd"></img>
               <div className="card-content stacked end">
                 <h3 className="fw-li">
                   <a href="templates/product.html">Men</a>

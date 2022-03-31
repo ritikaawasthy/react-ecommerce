@@ -6,10 +6,11 @@ import {faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import {useAuth} from '../../context/authContext'
 import { useNavigate } from 'react-router';
-
+import {checkPasswordExp, checkPasswordMatch} from './utility.jsx';
 
 function SignupPage(){
   let navigate = useNavigate();
+
   const [signupForm, setSignupForm]= useState({
     'firstName': "",
     'lastName': "",
@@ -24,7 +25,6 @@ const {setToken,setUser}= useAuth();
 const [errorMsg, setErrorMsg]= useState("");
 
 const formChangeHandler=(event)=>setSignupForm({...signupForm, [event.target.name] : event.target.value})
-
 
 const passwordValidation =(event)=>{
   console.log(event.target.value, signupForm.password2)
@@ -115,15 +115,6 @@ async function signupUser(event){
     </section>
   );
 }
-
-
-const checkPasswordMatch=(pass1,pass2)=>(pass1===pass2);
-const checkPasswordExp = (pass1) => {
-    const regEx = new RegExp(
-      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-    );
-    return regEx.test(pass1);
-  };
 
 
 export {SignupPage}

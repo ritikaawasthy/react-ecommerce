@@ -1,6 +1,6 @@
 import {SignupPage, LoginPage} from "./pages/index.js";
+import {Navbar} from "./components/navigation/nav";
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -8,15 +8,11 @@ import {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
-      <BrowserRouter>
+        <Navbar/>
         <Routes>
-          <Route path="/" element={<App />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }

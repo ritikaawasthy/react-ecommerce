@@ -2,6 +2,7 @@ import './landing-page.css';
 import {clothSlider, mainSlider, accessoriesSlider} from "../../data/carousel/landingCarousel";
 import {Carousel} from "../../components/carousel/carousel";
 import {categories} from "../../backend/db/categories";
+import { Link } from "react-router-dom";
 
 
 
@@ -11,18 +12,20 @@ function LandingPage() {
       <Carousel slideList={mainSlider} slideCount={1} autoplay={true} autoPlayInterval={4000}/>
     </section>
     <h2 className="center-txt fw-reg primary-col">
-      <a href="templates/product.html">Categories</a>
+      Categories
     </h2>
     <section className="container fl-center">
       {
-        categories.map((item) =>< div key = {
+        categories.map((item) =><Link to={`product/${item.categoryName}`}>< div key = {
           item._id
         }className = 'card card-shadow w-xs landing-card '>
         <img className='landing-card-img' src={item.picture}></img>
         <div className="card-content stacked fl-center">
           <p className='f-m'>{item.categoryName}</p>
         </div>
-      </div>)
+      </div>
+    </Link>
+    )
       }
     </section>
 

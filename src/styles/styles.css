@@ -95,6 +95,12 @@ a {
   background-color: var(--sale-tag);
 }
 
+.bestseller-tag{
+  padding: 0.5rem;
+  color: var(--primary-light);
+  background-color: var(--bestseller-tag);
+}
+
 .original-price{
   text-decoration: line-through;
 }

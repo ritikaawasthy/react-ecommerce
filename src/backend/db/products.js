@@ -16,7 +16,7 @@ export const products = [
     sale: {onSale: true,
             salePrice: "2500"},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/karina-carvalho-fKTKVrNqXQQ-unsplash.webp',
+    picture : '../../../public/media/products/productListing/men/bottom/karina-carvalho-fKTKVrNqXQQ-unsplash.webp',
   },
   {
     _id: uuid(),

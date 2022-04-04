@@ -16,7 +16,7 @@ function LandingPage() {
     </h2>
     <section className="container fl-center">
       {
-        categories.map((item) =><Link to={`product/${item.categoryName}`}>< div key = {
+        categories.map((item) =><Link to={`product/category/${item.categoryName}`}>< div key = {
           item._id
         }className = 'card card-shadow w-xs landing-card '>
         <img className='landing-card-img' src={item.picture}></img>

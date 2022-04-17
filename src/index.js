@@ -5,9 +5,9 @@ import App from "./App";
 import { makeServer } from "./server";
 import "./styles/styles.css";
 import {AuthProvider} from "./context/authContext";
-import {
-BrowserRouter
-} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
+
+
 // Call make Server
 makeServer();
 
@@ -17,7 +17,7 @@ ReactDOM.render(
     <AuthProvider>
     <App/>
     </AuthProvider>
-  </BrowserRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

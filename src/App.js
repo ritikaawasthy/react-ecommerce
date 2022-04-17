@@ -1,4 +1,4 @@
-import {SignupPage} from "./pages/index.js";
+import {SignupPage, LoginPage} from "./pages/index.js";
 import {
   Routes,
   Route,
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
         </Routes>
     </div>
   );

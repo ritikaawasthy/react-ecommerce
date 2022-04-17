@@ -1,4 +1,5 @@
-import {SignupPage, LoginPage} from "./pages/index.js";
+import {SignupPage, LoginPage, LandingPage, ProductPage, CartPage, WishlistPage} from "./pages/index.js";
+import {Navbar} from "./components/navigation/nav";
 import {
   Routes,
   Route,
@@ -7,12 +8,14 @@ import {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+        <Navbar/>
         <Routes>
-          <Route path="/" element={<App />}></Route>
+          <Route path="/" element={<LandingPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/product/:categoryId" element={<ProductPage />}></Route>
+            <Route path="/wishlist" element={<WishlistPage />}></Route>
+              <Route path="/cart" element={<CartPage />}></Route>
         </Routes>
     </div>
   );

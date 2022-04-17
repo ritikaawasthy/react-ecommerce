@@ -6,6 +6,7 @@ html{
   --secondary-light: #D6D6D6;
   --sale-tag: #ffe733;
   --sale-price: #fc0000;
+  --bestseller-tag: #d90958;
 }
 
 .primary-col{

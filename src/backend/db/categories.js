@@ -9,22 +9,22 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Topwear",
-    picture: 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/category/top.webp',
+    picture: 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/components/public/media/category/top.webp',
   },
   {
     _id: uuid(),
     categoryName: "Bottomwear",
-    picture: 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/category/bottom.webp' ,
+    picture: 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/components/public/media/category/bottom.webp' ,
   },
   {
     _id: uuid(),
     categoryName: "Footwear",
-    picture: 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/category/shoes.jpg' ,
+    picture: 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/landingpage/public/media/products/productListing/women/shoes/simona-todorova-jMlig2nx1-Y-unsplash_11zon.webp' ,
   },
   {
     _id: uuid(),
     categoryName: "Accessories",
-    picture: 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/category/accessories.webp' ,
+    picture: 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/components/public/media/category/accessories.webp' ,
   },
 
 ];

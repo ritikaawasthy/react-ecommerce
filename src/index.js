@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import "./styles/styles.css";
 import {AuthProvider} from "./context/authContext";
 import {BrowserRouter} from "react-router-dom";
+
 // Call make Server
 makeServer();
 

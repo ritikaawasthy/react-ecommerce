@@ -9,6 +9,9 @@
 
 .productPageLayoutSide{
   grid-area: side;
+  padding: 1.5rem;
+  position: fixed;
+  width: 18rem;
 }
 
 .productPageLayoutMain{

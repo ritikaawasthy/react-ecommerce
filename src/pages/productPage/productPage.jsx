@@ -1,40 +1,42 @@
 import {useParams} from "react-router-dom";
-import {products} from "../../backend/db/products";
-import {Filter} from "../../components/filter/filter";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';
+import {useEffect} from "react";
+import {Filter, ProductList} from "../../components/index";
 import "./product-page.css";
+import {useProduct} from "../../context/productContext";
+import axios from "axios";
 
 function ProductPage(){
   const {categoryName}=useParams();
-  const filteredArray=products.filter((item)=>(item.categoryName===categoryName))
+  const {productState, productDispatch} = useProduct();
 
-  const addProductCard=(item)=>{
-    return(<article className="card card-shadow w-s">
-      <div className="background">
-        <img className="product-img-s" src={item.picture} alt=""></img>
-      </div>
-      <div className="card-content ">
-      <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faHeart}></FontAwesomeIcon>
-      </div>
-      <div className="card-content-foot inline">
-          <a href="#" className="btn primary mg-b-s mg-l-s center">
-            <i className="fas fa-shopping-cart mg-r-s"></i>Add to cart
-          </a>
-          <div className="card-content stacked end">
-            <p className="fas fa-tag end"></p>
-            <p className="f-m">1299 Rs</p>
-          </div>
-      </div>
-    </article>);
-  }
+  const getAllProducts=async()=>{
+      try{
+        const response= await axios.get(`/api/products`);
+          productDispatch(()=>({
+             type: "SET_PRODUCTS",
+             payload:response.data.products}))
+      }catch(error){
+        console.log(error)
+      }
+    }
+
+  useEffect(()=>{
+    if(categoryName){
+      console.log("insideCate")
+      productDispatch({type:"FILTER_BY_CATEGORY", payload:productState, option:{category: categoryName}});
+    }
+  }, [])
+
+
   return(
     <section className='productPageLayoutContainer'>
       <article className='productPageLayoutSide primary'>
-        <Filter></Filter>
+        <Filter filterCategory={categoryName} ></Filter>
       </article>
       <article className='productPageLayoutMain'>
-      {filteredArray.map((item)=>addProductCard(item))}
+      { (productState!=undefined) ? <ProductList product={productState.products}></ProductList>
+    : ""
+  }
       </article>
     </section>
   );

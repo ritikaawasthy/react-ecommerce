@@ -13,6 +13,7 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/product" element={<ProductPage />}></Route>
             <Route path="/product/category/:categoryName" element={<ProductPage />}></Route>
             <Route path="/product/gender/:gender" element={<ProductPage />}></Route>
             <Route path="/wishlist" element={<WishlistPage />}></Route>

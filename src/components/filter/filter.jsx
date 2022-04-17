@@ -1,20 +1,23 @@
 import {categories} from "../../backend/db/categories";
 import "./filter.css";
-function Filter(){
+
+function Filter(props){
+  const categoryName= props.filterCategory;
   const addFilterCategories=(item)=>{
     return (
-    <div className="input-container ">
+    <div className="input-container " key={item._id}>
       <input placeholder=" "  type="checkbox" name={item.categoryName} className="input"></input>
       <label className="f-s">{item.categoryName}</label>
     </div>
   )
   }
  return (
-
    <ul className="list-container list-stacked">
-
+     <div className="container">
        <a className="fw-b">Filters</a>
-       <i className="">Clear</i>
+       <i className="end">Clear</i>
+     </div>
+
      <p className="fw-b">By Price</p>
      <form>
        <div className="input-container  ">

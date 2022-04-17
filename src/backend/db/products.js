@@ -16,7 +16,7 @@ export const products = [
     sale: {onSale: true,
             salePrice: "2500"},
     categoryName: "Bottomwear",
-    picture : '../../../public/media/products/productListing/men/bottom/karina-carvalho-fKTKVrNqXQQ-unsplash.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/karina-carvalho-fKTKVrNqXQQ-unsplash.webp',
   },
   {
     _id: uuid(),
@@ -28,7 +28,7 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/lucas-lenzi-VKkDAV7kj1Q-unsplash.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/lucas-lenzi-VKkDAV7kj1Q-unsplash.webp',
   },
   {
     _id: uuid(),
@@ -40,7 +40,7 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/mohamad-khosravi-d54wbtjedog-unsplash.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/mohamad-khosravi-d54wbtjedog-unsplash.webp',
   },
   {
     _id: uuid(),
@@ -52,7 +52,7 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/rayul-_M6gy9oHgII-unsplash.jpg',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/rodrigo-summer-BjMtxBMHGuw-unsplash.webp',
   },
   {
     _id: uuid(),
@@ -64,7 +64,7 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/rodrigo-summer-BjMtxBMHGuw-unsplash.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/tatiana-pavlova-dYJdfioyJzU-unsplash.webp',
   },
 
   {
@@ -77,30 +77,7 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/rodrigo-summer-BjMtxBMHGuw-unsplash.webp',
-  },{
-    _id: uuid(),
-    title: "Pants",
-    brand: "Zara",
-    gender: 'men',
-    price: "3000",
-    rating: '4',
-    sale: {onSale: false,
-            salePrice: ""},
-    categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/tatiana-pavlova-dYJdfioyJzU-unsplash.webp',
-  },
-  {
-    _id: uuid(),
-    title: "Pants",
-    brand: "Zara",
-    gender: 'men',
-    price: "3000",
-    rating: '4',
-    sale: {onSale: false,
-            salePrice: ""},
-    categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/tobe-mokolo-PbZ-TVPX6UI-unsplash.jpg',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/bottom/tobe-mokolo-PbiYceITwt0-unsplash.webp',
   },
   {
     _id: uuid(),
@@ -112,7 +89,43 @@ export const products = [
     sale: {onSale: false,
             salePrice: ""},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/tobe-mokolo-PbZ-TVPX6UI-unsplash.jpg',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/bottom/wj.webp',
+  },
+  {
+    _id: uuid(),
+    title: "Shorts",
+    brand: "Levis",
+    gender: 'women',
+    price: "3000",
+    rating: '4',
+    sale: {onSale: true,
+            salePrice: "2500"},
+    categoryName: "Bottomwear",
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/bottom/engin-akyurt-CvYZwRRifzo-unsplash.webp',
+  },
+  {
+    _id: uuid(),
+    title: "Shorts",
+    brand: "Mango",
+    gender: 'women',
+    price: "3000",
+    rating: '4',
+    sale: {onSale: false,
+            salePrice: ""},
+    categoryName: "Bottomwear",
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/bottom/engin-akyurt-Veu_YLo3_qc-unsplash_11zon.webp',
+  },
+  {
+    _id: uuid(),
+    title: "Skirt",
+    brand: "Mango",
+    gender: 'women',
+    price: "3000",
+    rating: '4',
+    sale: {onSale: false,
+            salePrice: ""},
+    categoryName: "Bottomwear",
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/bottom/icons8-team-6LZuSzSwso0-unsplash_11zon.webp',
   },
   {
     _id: uuid(),
@@ -124,43 +137,7 @@ export const products = [
     sale: {onSale: true,
             salePrice: "2500"},
     categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/bottom/tobe-mokolo-PbZ-TVPX6UI-unsplash.jpg',
-  },
-  {
-    _id: uuid(),
-    title: "Pants",
-    brand: "Mango",
-    gender: 'women',
-    price: "3000",
-    rating: '4',
-    sale: {onSale: false,
-            salePrice: ""},
-    categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/bottom/hush-naidoo-jade-photography-1vBexPeDD3o-unsplash_11zon.webp',
-  },
-  {
-    _id: uuid(),
-    title: "Pants",
-    brand: "Mango",
-    gender: 'women',
-    price: "3000",
-    rating: '4',
-    sale: {onSale: false,
-            salePrice: ""},
-    categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/bottom/laura-chouette-q4Wrsho-t2E-unsplash.webp',
-  },
-  {
-    _id: uuid(),
-    title: "Pants",
-    brand: "Levis",
-    gender: 'women',
-    price: "3000",
-    rating: '4',
-    sale: {onSale: true,
-            salePrice: "2500"},
-    categoryName: "Bottomwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/bottom/sule-makaroglu-09O56jbspW0-unsplash_11zon.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/bottom/laura-chouette-q4Wrsho-t2E-unsplash.webp',
   },
 
   {
@@ -173,7 +150,7 @@ export const products = [
     sale: {onSale: true,
             salePrice: "800"},
     categoryName: "Topwear",
-    picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/1.webp',
+    picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/mohamadreza-khashai-fBOvJQ-hasE-unsplash_11zon.webp',
   },
 
     {
@@ -186,7 +163,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/andreea-chidu-FPV2_FbNHoE-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/1.webp',
     },
 
     {
@@ -199,7 +176,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/chalo-garcia-2ZwJwQtKDqQ-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/andreea-chidu-FPV2_FbNHoE-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -211,7 +188,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/engin-akyurt-jaZoffxg1yc-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/chalo-garcia-2ZwJwQtKDqQ-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -223,7 +200,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/engin-akyurt-jaZoffxg1yc-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/left-top-1.webp',
     },
     {
       _id: uuid(),
@@ -235,7 +212,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/left-top-1.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/left-top-2.webp',
     },
     {
       _id: uuid(),
@@ -247,7 +224,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/top/left-top-2.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/top/madison-compton-0pletdzv3UM-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -259,7 +236,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/ezgif.com-gif-maker.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/1.webp',
     },
     {
       _id: uuid(),
@@ -271,7 +248,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/left-bottom-3.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/ezgif.com-gif-maker.webp',
     },
     {
       _id: uuid(),
@@ -283,7 +260,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/right-bottom-3.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/left-bottom-3.webp',
     },
     {
       _id: uuid(),
@@ -295,7 +272,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/right-top-2.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/right-bottom-3.webp',
     },
     {
       _id: uuid(),
@@ -307,7 +284,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/1.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/right-top-1.webp',
     },
     {
       _id: uuid(),
@@ -319,7 +296,7 @@ export const products = [
       sale: {onSale: true,
               salePrice: "400"},
       categoryName: "Topwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/top/right-top-3.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/top/right-top-2.webp',
     },
     {
       _id: uuid(),
@@ -331,7 +308,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/shoes/christian-lucas-ga76RrgtSKE-unsplash.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/shoes/christian-lucas-ga76RrgtSKE-unsplash.webp',
     },
     {
       _id: uuid(),
@@ -343,7 +320,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/shoes/dorian-hurst-a9uWPQlIbYc-unsplash.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/shoes/adrian-regeci--xVGwY6kiO0-unsplash.webp',
     },{
       _id: uuid(),
       title: "Shoes",
@@ -354,7 +331,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/shoes/jamill-del-rosario-D5Bz7VQCx_k-unsplash.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/shoes/dorian-hurst-a9uWPQlIbYc-unsplash.webp',
     },{
       _id: uuid(),
       title: "Shoes",
@@ -365,7 +342,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/men/shoes/jawad-jawahir-GYz6tSl_XT0-unsplash.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/men/shoes/jamill-del-rosario-D5Bz7VQCx_k-unsplash.webp',
     },
     {
       _id: uuid(),
@@ -377,7 +354,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/alex-quezada-qAyOt0aGsCo-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/alex-quezada-qAyOt0aGsCo-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -389,7 +366,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/apostolos-vamvouras-SfzbMnIocdc-unsplash_11zon.webp'
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/simona-todorova-jMlig2nx1-Y-unsplash_11zon.webp'
     },
     {
       _id: uuid(),
@@ -401,7 +378,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/chitto-cancio-9urrzNhb3PU-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/chitto-cancio-9urrzNhb3PU-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -413,7 +390,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/laura-chouette-AlX5260JnmI-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/laura-chouette-AlX5260JnmI-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -425,7 +402,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/no-revisions-Nif90HDYRRE-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/pesce-huang-88LNB7QuiQo-unsplash_11zon.webp',
     },
     {
       _id: uuid(),
@@ -437,15 +414,7 @@ export const products = [
       sale: {onSale: false,
               salePrice: ""},
       categoryName: "Footwear",
-      picture : 'https://github.com/ritikaawasthy/react-ecommerce/blob/components/public/media/products/productListing/women/shoes/pesce-huang-88LNB7QuiQo-unsplash_11zon.webp',
+      picture : 'https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/productPage/public/media/products/productListing/women/shoes/no-revisions-Nif90HDYRRE-unsplash_11zon.webp',
     },
-
-
-
-
-
-
-
-
 
 ];

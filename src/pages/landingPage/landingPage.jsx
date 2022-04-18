@@ -16,7 +16,7 @@ function LandingPage() {
     </h2>
     <section className="container fl-center">
       {
-        categories.map((item) =><Link to={`product/${item.categoryName}`}>< div key = {
+        categories.map((item) =><Link to={`product/category/${item.categoryName}`}>< div key = {
           item._id
         }className = 'card card-shadow w-xs landing-card '>
         <img className='landing-card-img' src={item.picture}></img>
@@ -58,7 +58,7 @@ function LandingPage() {
           <h3>Our Vision</h3>
           <p>Every week, these Instagram thrift retailers drop their pre-loved items, which are always in high demand. The nicest thing about these shops is how numerous they are. You can always go out and look for a thrift store that meets your tastes. These shops are run by small business owners who choose good pieces for our wardrobes and ensure that all of our sustainable demands are met, However there exists almost no platform that brings all of this at one place. The thrift store aims are solving this issue by allowing user to buy/sell their products. </p>
           <h4>What does this solve?</h4>
-          <p>1. </p>
+          <p>1. It Promotes reusing of cloths which when done on a large scale ould make a great impact as cloth making process highly damage enviornmnet and exploit its resources    </p>
         </article>
       </section>
     </div>

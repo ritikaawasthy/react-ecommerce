@@ -1,5 +1,5 @@
 import {SignupPage, LoginPage, LandingPage, ProductPage, CartPage, WishlistPage} from "./pages/index.js";
-import {Navbar} from "./components/navigation/nav";
+import {Navbar, Footer} from "./components/index";
 import {
   Routes,
   Route,
@@ -19,6 +19,7 @@ function App() {
             <Route path="/wishlist" element={<WishlistPage />}></Route>
               <Route path="/cart" element={<CartPage />}></Route>
         </Routes>
+        <Footer/>
     </div>
   );
 }

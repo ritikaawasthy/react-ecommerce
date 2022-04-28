@@ -1,6 +1,6 @@
 
 
-function Footer(props){
+function Footer(){
   return(
     <footer class="grid-three-layout-container">
 

@@ -1,8 +1,12 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHeart,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {useWishlist} from "../../context/wishlistContext"
+
 
 
 const addProductCard=(item)=>{
+  const { wishlistState,setWishlistState}= useWishlist();
+
   if(item.sale.onSale){
     return(
       <article className="card card-shadow w-s" key={item._id}>
@@ -10,7 +14,7 @@ const addProductCard=(item)=>{
           <img className="product-img-s" src={item.picture} alt="product"></img>
         </div>
         <div className="card-content ">
-          <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faHeart}></FontAwesomeIcon>
+          <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faHeart} onClick={()=>setWishlistState([...wishlistState, item ]) }></FontAwesomeIcon>
           <i className="sale-tag sale-tag-bg end">
             SALE
             <i className="fa-solid fa-tag"></i>
@@ -36,7 +40,7 @@ const addProductCard=(item)=>{
         <img className="product-img-s" src={item.picture} alt=""></img>
       </div>
       <div className="card-content ">
-      <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faHeart}></FontAwesomeIcon>
+      <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faHeart} onClick={()=>setWishlistState([...wishlistState, item ]) }></FontAwesomeIcon>
       </div>
       <div className="card-content-foot fl-space inline">
           <p className="f-m center mg-l-m">₹ {item.price}</p>

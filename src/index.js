@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import "./styles/styles.css";
 import {AuthProvider} from "./context/authContext";
 import {ProductProvider} from "./context/productContext"
+import {WishlistProvider} from "./context/wishlistContext"
 import {BrowserRouter} from "react-router-dom";
 // Call make Server
 makeServer();
@@ -15,8 +16,10 @@ ReactDOM.render(
     <BrowserRouter>
     <AuthProvider>
       <ProductProvider>
-        <App/>
-      </ProductProvider>    
+        <WishlistProvider>
+            <App/>
+        </WishlistProvider>
+      </ProductProvider>
     </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,

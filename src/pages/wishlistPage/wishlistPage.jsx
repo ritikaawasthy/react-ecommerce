@@ -2,20 +2,19 @@
 import "./wishlist.css";
 import {useWishlist} from "../../context/wishlistContext"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faClose,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {faClose,faShoppingCart, faTrashCan} from '@fortawesome/free-solid-svg-icons';
+
 
 function WishlistPage(){
   const {wishlistState, setWishlistState}= useWishlist();
 
-  const addWishlistCard=(products)=>{
-    products.map((item)=>{
-      if(item.sale.onSale){
+  const addWishlistCard=(item)=>((item.sale.onSale)?
         <article className="card card-shadow w-s" key={item._id}>
           <div className="background">
             <img className="product-img-s" src={item.picture} alt="product"></img>
           </div>
           <div className="card-content ">
-            <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faClose} onClick={()=>setWishlistState(()=>wishlistState.filter((product)=>product!==item)) }></FontAwesomeIcon>
+            <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faTrashCan} onClick={()=>setWishlistState(()=>wishlistState.filter((product)=>product._id!==item._id)) }></FontAwesomeIcon>
             <i className="sale-tag sale-tag-bg end">
               SALE
               <i className="fa-solid fa-tag"></i>
@@ -33,13 +32,12 @@ function WishlistPage(){
             </div>
           </div>
           </article>
-      }else{
-        <article className="card card-shadow w-s" key={item._id}>
+      :<article className="card card-shadow w-s" key={item._id}>
           <div className="background">
             <img className="product-img-s" src={item.picture} alt=""></img>
           </div>
           <div className="card-content ">
-          <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faClose} onClick={()=>setWishlistState(()=>wishlistState.filter((product)=>product!==item)) }></FontAwesomeIcon>
+          <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn" icon={faTrashCan} onClick={()=>setWishlistState(()=>wishlistState.filter((product)=>product._id!==item._id)) }></FontAwesomeIcon>
           </div>
           <div className="card-content-foot fl-space inline">
               <p className="f-m center mg-l-m">₹ {item.price}</p>
@@ -49,17 +47,21 @@ function WishlistPage(){
                   </a>
               </div>
           </div>
-        </article>
-
-      }
-    })
-  }
+        </article>);
   return(
+    <div>
+      <hr></hr>
+      <div>
+        <h2 className="center-txt">Wishlist <span className="fas fa-heart"></span></h2>
+        <p className="center-txt f-m">Checkout the items you wishlisted</p>
+      </div>
+      <hr></hr>
     <section className="wishlist-container">
       {
-      wishlistState && addWishlistCard(wishlistState)
+      wishlistState && wishlistState.map((item)=>addWishlistCard(item))
       }
     </section>
+    </div>
 );
 }
 export{WishlistPage}

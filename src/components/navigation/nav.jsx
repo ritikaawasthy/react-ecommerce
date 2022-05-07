@@ -3,9 +3,11 @@ import {faHeart, faShoppingCart, faUser} from '@fortawesome/free-solid-svg-icons
 import navLogo from '../../data/logo/navLogo.png';
 import "./nav.css";
 import {useWishlist} from "../../context/wishlistContext"
+import {useCart} from "../../context/cartContext"
 import {Link} from "react-router-dom"
 function Navbar(){
   const {wishlistState}= useWishlist();
+  const {cartState}= useCart();
 
   return(
     <header>
@@ -24,14 +26,23 @@ function Navbar(){
           <li>
             <Link to='/wishlist'>
             <div className="badge-cont">
-            <div className="badge primary">{wishlistState.length}</div>
+            <div className="badge primary">{wishlistState && wishlistState.length}</div>
             <div className="badge-icon">
-                <FontAwesomeIcon href="templates/wishlist.html" icon={faHeart} className="f-l"></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faHeart} className="f-l"></FontAwesomeIcon>
             </div>
             </div>
            </Link>
           </li>
-          <li><FontAwesomeIcon href="templates/wishlist.html" icon={faShoppingCart} className="f-l"></FontAwesomeIcon></li>
+          <li>
+            <Link to='/cart'>
+            <div className="badge-cont">
+              <div className="badge primary">{cartState && cartState.length}</div>
+              <div className="badge-icon">
+                  <FontAwesomeIcon icon={faShoppingCart} className="f-l"></FontAwesomeIcon>
+              </div>
+            </div>
+            </Link>
+          </li>
           <li ><FontAwesomeIcon href="templates/wishlist.html" icon={faUser} className="f-l"></FontAwesomeIcon></li>
         </ul>
       </nav>

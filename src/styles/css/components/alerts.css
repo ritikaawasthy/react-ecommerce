@@ -4,14 +4,11 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0.5rem 1rem;
-  background-color:  var(--palesilver-li);
   width:30rem;
   border-radius: 0.5rem;
-  color: var(--prim-col);
   box-shadow: 1px 1px 3px 1px lightgrey;
   box-sizing: border-box;
   font-size: 1.2rem;
-
 }
 .alert-close{
   margin-left: auto;

@@ -1,50 +1,79 @@
+import "./cart.css"
+import {useCart} from "../../context/cartContext"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faClose, faIndianRupeeSign} from '@fortawesome/free-solid-svg-icons';
+
 function Cart(){
+  const {cartState,setCartState} = useCart()
+  const removeFromCart=(item)=>{
+    console.log(item)
+    setCartState(()=>cartState.filter((cartItem)=>cartItem._id!==item._id))
+  }
+
+  const TotalPrice= cartState && cartState.reduce((prev, cartItem)=>(cartItem.sale.onSale)? parseInt(prev)+parseInt(cartItem.sale.salePrice * cartItem.quantity): parseInt(prev)+parseInt(cartItem.price * cartItem.quantity), 0)
+
+  const increaseQuantity=(item)=>setCartState(()=>cartState.map((cartItem)=>(cartItem._id===item._id)? {...cartItem, quantity:cartItem.quantity+1}:{...cartItem}))
+
+  const decreaseQuantity=(item)=>setCartState(()=>cartState.map((cartItem)=>(cartItem._id===item._id)?((cartItem.quantity<=1)?{...cartItem}:{...cartItem, quantity:cartItem.quantity-1}):{...cartItem}))
+
+
   return(
     <div className="product-container">
     <section className="grid-two-layout-container">
       <article className="grid-two-layout-left">
-        <div className="container fl-end">
-       <div className="card w-xxl">
-         <div className="card-content card-shadow inline">
-           <img className="product-img-s" src="/media/products/women/top/2.webp" alt=""></img>
-           <div className="card-content stacked">
-               <h3 className="primary-col">Mango</h3>
-               <p className="f-m">Blue casual top</p>
-               <p className="fw-light">Sold by: xyz traders</p>
-             <div className="card-content inline mg-t-l">
-               <a href="#" className="badge badge-text primary-bg primary-light-col f-s"><i className="fa-solid fa-square-down"></i>Size: XS</a>
-               <a href="#" className="badge badge-text primary-bg primary-light-col f-s"><i className="fa-solid fa-square-down"></i>Quantity: 1</a>
-             </div>
-             <p><i className="fas fa-check mg-r-s"></i>Delivery before 24th february </p>
-             <p className="f-l end mg-t-l">675 Rs</p>
-           </div>
-           <i className="fas fa-close f-l end"></i>
-         </div>
-       </div>
+        <div className="cart-products-container">
+          {
+            cartState.map((item)=><div className="card w-xl">
+              <div className="card-content card-shadow inline">
+                <img className="cart-img" src={item.picture}  alt=""></img>
+                <div className="card-content stacked">
+                    <h3 className="primary-col f-l fw-li">{item.brand}</h3>
+                    <p className="f-s">{item.title}</p>
+                  <div className="card-content inline mg-t-xs">
+                    <a className="badge badge-text primary-bg primary-light-col f-xs"><i className="fa-solid fa-square-down"></i>Size: {item.size}</a>
+                    <a className="badge badge-text primary-bg primary-light-col f-xs">Quantity:{item.quantity}
+                    </a>
+                     <button onClick={()=>increaseQuantity(item)} className="btn btn-float btn-bordered sm-btn fw-bb">+</button>
+                     <button onClick={()=>decreaseQuantity(item)} className="btn btn-float btn-bordered sm-btn fw-bb">-</button>
+                  </div>
+                  <p><i className="fas fa-check mg-r-s">Delivery by next week</i>
+                  </p>
+                    {
+                      (item.sale.onSale)?<p className="f-m fw-reg mg-t-m"><FontAwesomeIcon className="mg-r-s" icon={faIndianRupeeSign}></FontAwesomeIcon>{item.sale.salePrice * item.quantity}</p>
+                  :<p className="f-m fw-reg mg-t-m"><FontAwesomeIcon className="mg-r-s" icon={faIndianRupeeSign}></FontAwesomeIcon>{item.price * item.quantity}
+                </p>
+                    }
+                </div>
+                <i className="f-l end">
+                  <FontAwesomeIcon onClick={()=>removeFromCart(item)} className="fw-li primary-col" icon={faClose}>
+                  </FontAwesomeIcon>
+                </i>
+              </div>
+            </div>
+          )
+          }
       </div>
      </article>
     <article className="grid-two-layout-right fl-center">
       <div className="container-col fl-space">
         <div className="card card-shadow w-xxl pd-t-l pd-r-l pd-l-l pd-b-l">
-
           <ul>
             <li> <h3 className="center-txt primary-col">Bill</h3></li>
-            <li><p className="f-m primary-col">Price details:</p></li>
-            <li className="card-content inline"><p>Total MRP</p>
-            <p className="end">Rs 8871</p>
-          </li>
-          <li className="card-content inline "><p>Total MRP</p>
-          <p className="end">Rs 8871</p>
-        </li>
-        <li className="card-content inline "><p>Total MRP</p>
-        <p className="end">Rs 8871</p>
-      </li>
+            <li><p className="primary-col">Price details</p></li>
+            {
+              cartState.map((cartItem)=><li className="card-content inline"><p> {cartItem.brand} | {cartItem.title} | {cartItem.quantity}</p>
+            <p className="end">Rs {(cartItem.sale.onSale)?cartItem.sale.salePrice * cartItem.quantity: cartItem.price * cartItem.quantity}</p>
+            </li>)
+            }
       <hr></hr>
-      <li className="card-content inline "><p>Total MRP</p>
-      <p className="end">Rs 8871</p>
+      <li className="card-content inline "><p>Total Cost</p>
+      {
+        <p className="end">
+          {TotalPrice}
+          </p>
+      }
     </li>
       </ul>
-
       <p className="f-m primary-col">Offers and coupons</p>
           <div className="card w-xxl primary-light-bg">
             <div className="card-content inline fl-center">

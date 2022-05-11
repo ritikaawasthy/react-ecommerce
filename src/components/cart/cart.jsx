@@ -1,14 +1,12 @@
 import "./cart.css"
 import {useCart} from "../../context/cartContext"
+import {useWishlist} from "../../context/wishlistContext"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faClose, faIndianRupeeSign} from '@fortawesome/free-solid-svg-icons';
+import {faClose,faCircleDot, faIndianRupeeSign, faHeart} from '@fortawesome/free-solid-svg-icons';
 
 function Cart(){
-  const {cartState,setCartState} = useCart()
-  const removeFromCart=(item)=>{
-    console.log(item)
-    setCartState(()=>cartState.filter((cartItem)=>cartItem._id!==item._id))
-  }
+  const {cartState,setCartState, removeFromCart} = useCart()
+  const {addToWishlist}= useWishlist()
 
   const TotalPrice= cartState && cartState.reduce((prev, cartItem)=>(cartItem.sale.onSale)? parseInt(prev)+parseInt(cartItem.sale.salePrice * cartItem.quantity): parseInt(prev)+parseInt(cartItem.price * cartItem.quantity), 0)
 
@@ -38,16 +36,18 @@ function Cart(){
                   </div>
                   <p><i className="fas fa-check mg-r-s">Delivery by next week</i>
                   </p>
+
                     {
                       (item.sale.onSale)?<p className="f-m fw-reg mg-t-m"><FontAwesomeIcon className="mg-r-s" icon={faIndianRupeeSign}></FontAwesomeIcon>{item.sale.salePrice * item.quantity}</p>
                   :<p className="f-m fw-reg mg-t-m"><FontAwesomeIcon className="mg-r-s" icon={faIndianRupeeSign}></FontAwesomeIcon>{item.price * item.quantity}
                 </p>
                     }
                 </div>
-                <i className="f-l end">
-                  <FontAwesomeIcon onClick={()=>removeFromCart(item)} className="fw-li primary-col" icon={faClose}>
+                <div className="cart-card-side">
+                  <FontAwesomeIcon onClick={()=>removeFromCart(item)} className="fw-li f-l primary-col" icon={faClose}>
                   </FontAwesomeIcon>
-                </i>
+                <FontAwesomeIcon className="primary-col white-trans-bg round f-m wishlist-btn end" icon={faHeart} onClick={()=>addToWishlist(item)}></FontAwesomeIcon>
+                </div>
               </div>
             </div>
           )
@@ -59,16 +59,16 @@ function Cart(){
         <div className="card card-shadow w-xxl pd-t-l pd-r-l pd-l-l pd-b-l">
           <ul>
             <li> <h3 className="center-txt primary-col">Bill</h3></li>
-            <li><p className="primary-col">Price details</p></li>
+            <li><p className="primary-col f-m">Price details</p></li>
             {
               cartState.map((cartItem)=><li className="card-content inline"><p> {cartItem.brand} | {cartItem.title} | {cartItem.quantity}</p>
             <p className="end">Rs {(cartItem.sale.onSale)?cartItem.sale.salePrice * cartItem.quantity: cartItem.price * cartItem.quantity}</p>
             </li>)
             }
       <hr></hr>
-      <li className="card-content inline "><p>Total Cost</p>
+      <li className="card-content inline fw-reg "><p>Total Cost</p>
       {
-        <p className="end">
+        <p className="fw-reg end">
           {TotalPrice}
           </p>
       }
@@ -77,10 +77,10 @@ function Cart(){
       <p className="f-m primary-col">Offers and coupons</p>
           <div className="card w-xxl primary-light-bg">
             <div className="card-content inline fl-center">
-              <p><i className="fas fa-tag primary-col mg-r-s"></i>Apply Coupon</p>
+              <p className="fw-bb"><FontAwesomeIcon icon={faCircleDot} className="primary-col mg-r-s"></FontAwesomeIcon>Apply Coupon</p>
               <div className="input-container f-s">
                 <input type="text" className="input" placeholder=" " value=""></input>
-                <label className="input-label fw-reg" for="">Coupon Code</label>
+                <label className="input-label fw-li" for="">Coupon Code</label>
               </div>
               <a className="btn btn-bordered primary-col f-s fw-b end" href="#">Submit</a>
             </div>

@@ -1,15 +1,15 @@
 const mainSlider = [
   {
     id: 0,
-    imgSrc: "https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/landingpage/public/media/landing/carouselTop/1.webp",
+    imgSrc: "media/landing/carouselTop/1.webp",
     caption: "This is an initial caption "
   }, {
     id: 1,
-    imgSrc: "https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/landingpage/public/media/landing/carouselTop/2.webp",
+    imgSrc: "media/landing/carouselTop/2.webp",
     caption: "This is a 2 caption "
   }, {
     id: 2,
-    imgSrc: "https://raw.githubusercontent.com/ritikaawasthy/react-ecommerce/landingpage/public/media/landing/carouselTop/3.webp",
+    imgSrc: "media/landing/carouselTop/3.webp",
     caption: "This is a 3 caption "
   }
 ];

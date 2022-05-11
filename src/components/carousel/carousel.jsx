@@ -49,10 +49,6 @@ function Carousel(props) {
               <img src={slide.imgSrc} alt="" className="background carouselMain "></img>
             </div>
             <div className="card-content inline center-top">
-              <p className="primary-col white-trans-bg fw-li f-xxl start">Women Store
-              </p>
-              <p className="primary-col white-trans-bg fw-li f-xxl end">Men Store
-              </p>
             </div>
             <div className="card-content inline fl-center">
               <FontAwesomeIcon icon={faAnglesLeft} className="card-icon round left f-l" fixedWidth="fixedWidth" onClick={() => slideBack()}/>

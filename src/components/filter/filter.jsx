@@ -3,25 +3,8 @@ import "./filter.css";
 import {useProduct} from "../../context/productContext";
 import {useState} from "react";
 
-function Filter(props){
+function Filter(){
   const {productState, productDispatch} = useProduct();
-  // const {filterState, setFilterState}= useState({
-  //   price: {
-  //     high: "",
-  //     low: ""
-  //   },
-  //   category: {
-  //     topwear: "",
-  //     bottomwear: "",
-  //     footwear: "",
-  //     accessory: ""
-  //   },
-  //   gender: {
-  //     men: "",
-  //     woman: ""
-  //   },
-  //   rating: ""
-  // });
 
   const filterHandler=(event)=>{
     event.preventDefault()
@@ -32,9 +15,6 @@ function Filter(props){
         productDispatch({type: event.target.value})
       )
     }
-
-
-    // productDispatch({type:event.target.value})
   }
 
   const addFilterCategories=(item)=>{

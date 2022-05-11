@@ -1,13 +1,15 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useReducer} from "react";
+import {useEffect} from "react";
 import {Filter, ProductList} from "../../components/index";
 import "./product-page.css";
 import axios from "axios";
 import {useProduct} from "../../context/productContext";
+import {useCart} from "../../context/cartContext";
 
 function ProductPage(){
   const {categoryName}=useParams();
   const {productState, productDispatch} = useProduct();
+  const {alert}= useCart();
 
   useEffect(()=>{
     (async () => {
@@ -34,9 +36,13 @@ function ProductPage(){
   return(
     <section className='productPageLayoutContainer'>
       <article className='productPageLayoutSide primary'>
-        <Filter filterState={productState} setFilter={productDispatch} ></Filter>
+        <Filter></Filter>
       </article>
       <article className='productPageLayoutMain'>
+        <div class="alert primary alert-msg" style={{display:alert.display}}>
+            <p>{alert.message}</p>
+            <span class="alert-close">&#10540;</span>
+        </div>
         {
           productState && <ProductList product={productState.products}></ProductList>
         }

@@ -1,12 +1,14 @@
 
 import "./wishlist.css";
 import {useWishlist} from "../../context/wishlistContext"
+import {useCart} from "../../context/cartContext"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faClose,faShoppingCart, faTrashCan} from '@fortawesome/free-solid-svg-icons';
+import {faShoppingCart, faTrashCan} from '@fortawesome/free-solid-svg-icons';
 
 
 function WishlistPage(){
   const {wishlistState, setWishlistState}= useWishlist();
+  const {addToCart,alert, setAlert  }= useCart();
 
   const addWishlistCard=(item)=>((item.sale.onSale)?
         <article className="card card-shadow w-s" key={item._id}>
@@ -26,7 +28,7 @@ function WishlistPage(){
               <p className="sale-price  mg-l-m">₹ {item.sale.salePrice}</p>
             </div>
             <div className="card-content stacked">
-                <a href="#" className="btn primary mg-b-s mg-l-s center">
+                <a onClick={()=>addToCart(item)} className="btn primary mg-b-s mg-l-s center">
                   <FontAwesomeIcon icon={faShoppingCart} className="mg-r-s"></FontAwesomeIcon>Add to cart
                 </a>
             </div>
@@ -42,7 +44,7 @@ function WishlistPage(){
           <div className="card-content-foot fl-space inline">
               <p className="f-m center mg-l-m">₹ {item.price}</p>
               <div className="card-content stacked">
-                  <a href="#" className="btn primary mg-b-s mg-l-s center">
+                  <a onClick={()=>addToCart(item)} className="btn primary mg-b-s mg-l-s center">
                     <FontAwesomeIcon icon={faShoppingCart} className="mg-r-s"></FontAwesomeIcon>Add to cart
                   </a>
               </div>
@@ -56,6 +58,10 @@ function WishlistPage(){
         <p className="center-txt f-m">Checkout the items you wishlisted</p>
       </div>
       <hr></hr>
+        <div class="alert primary alert-msg" style={{display:alert.display}}>
+            <p>{alert.message}</p>
+            <span class="alert-close">&#10540;</span>
+        </div>
     <section className="wishlist-container">
       {
       wishlistState && wishlistState.map((item)=>addWishlistCard(item))

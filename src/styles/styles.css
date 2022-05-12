@@ -132,12 +132,6 @@ a {
   gap:0.2rem;
 }
 
-#wishlist-alert{
-  position: absolute;
-  top: 5vh;
-  left: 35vw;
-  z-index:10;
-}
 
 .out-of-stock{
   opacity:0.4;

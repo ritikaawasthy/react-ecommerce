@@ -11,7 +11,7 @@ function LandingPage() {
     <section>
       <Carousel slideList={mainSlider} slideCount={1} autoplay={true} autoPlayInterval={4000}/>
     </section>
-    <h2 className="center-txt fw-reg primary-col">
+    <h2 className="center-txt fw-reg primary-col landing-head">
       Categories
     </h2>
     <section className="container fl-center">
@@ -31,14 +31,14 @@ function LandingPage() {
 
   <section className="slider-top">
     <h2 className="center-txt fw-reg primary-col">
-      <a href="templates/product.html">Clothing</a>
+      <a className="head">Clothing</a>
     </h2>
     <Carousel slideList={clothSlider} slideCount={2} autoplay={false}/>
   </section>
 
   <section className="slider-top">
     <h2 className="center-txt fw-reg primary-col">
-      <a href="templates/product.html">Footwear</a>
+      <a className="landing-head">Footwear</a>
     </h2>
     <Carousel slideList={accessoriesSlider} slideCount={3} autoplay={false}/>
   </section>

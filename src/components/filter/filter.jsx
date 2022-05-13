@@ -5,28 +5,53 @@ import {useState} from "react";
 
 function Filter(){
   const {productState, productDispatch} = useProduct();
-
+  const [filterState, setFilterState]= useState({
+    price: "" ,
+    category:[] ,
+    gender: "" ,
+    rating:"" ,
+  })
   const filterHandler=(event)=>{
-    event.preventDefault()
     console.log(event.target.name,event.target.value)
     switch(event.target.name){
       case "price":
-      return(
-        productDispatch({type: event.target.value})
-      )
+      setFilterState(()=>({...filterState, price:event.target.value}))
+      productDispatch({type: event.target.value})
+      return
+      case "category":
+      if(filterState.category===[]){
+        productDispatch({type:"SET_INITIAL_PRODUCTS"})
+      }
+      if(filterState.category.includes(event.target.value)){
+        productDispatch({category:filterState.category.filter((item)=>item!==event.target.value), type: "REMOVE_CATEGORY", remove:event.target.value})
+        setFilterState({...filterState, category:filterState.category.filter((item)=>item!==event.target.value)})
+      }else{
+        productDispatch({category:[...filterState.category,event.target.value], type: "FILTER_BY_CATEGORY"})
+        setFilterState(()=>({...filterState, category: [...filterState.category ,event.target.value]}))
+      }
+      return
+      case "gender":
+      productDispatch({gender:event.target.value, type: "FILTER_BY_GENDER"})
+      setFilterState({...filterState, gender:event.target.value})
+      case "rate":
+      productDispatch({rating:event.target.value, type: "FILTER_BY_RATING"})
+      setFilterState({...filterState, rating:event.target.value})
+
     }
   }
+
+
 
   const addFilterCategories=(item)=>{
     return (
     <div className="input-container " key={item._id}>
-      <input placeholder=" "  type="checkbox" name="category" className="input" value={item.categoryName}></input>
+      <input placeholder=" "  type="checkbox" name="category" className="input" value={item.categoryName} checked={filterState.category===item.categoryName} ></input>
       <label className="f-s">{item.categoryName}</label>
     </div>
   )
   }
  return (
-   <form onChange={(event)=>filterHandler(event)}>
+   <form onChange={(event)=>filterHandler(event)} >
    <ul className="list-container list-stacked">
      <div className="container">
        <a className="fw-b">Filters</a>
@@ -36,11 +61,11 @@ function Filter(){
      <p className="fw-b">By Price</p>
      <div>
        <div className="input-container  ">
-         <input placeholder=" "  type="radio" name="price" className="input" value="SORT_PRICE_HIGH" checked={productState.filter.price.SORT_PRICE_HIGH}></input>
+         <input placeholder=" "  type="radio" name="price" className="input" value="SORT_PRICE_HIGH" checked={filterState.price==="SORT_PRICE_HIGH"}></input>
          <label className="f-s">High - Low</label>
          </div>
          <div className="input-container  ">
-         <input placeholder=" "  type="radio" name="price" className="input" value="SORT_PRICE_LOW" checked={productState.filter.price.SORT_PRICE_LOW}></input>
+         <input placeholder=" "  type="radio" name="price" className="input" value="SORT_PRICE_LOW" checked={filterState.price==="SORT_PRICE_LOW"}></input>
          <label className="f-s">Low - High</label>
        </div>
      </div>
@@ -52,11 +77,11 @@ function Filter(){
 
      <p className="fw-b">By Gender</p>
        <div className="input-container  ">
-         <input placeholder=" "  type="radio" name="gender" className="input" value="Women"></input>
+         <input placeholder=" "  type="radio" name="gender" className="input" value="women"></input>
          <label className="f-s">Women</label>
         </div>
         <div className="input-container  ">
-         <input placeholder=" "  type="radio" name="gender" className="input" value="Men"></input>
+         <input placeholder=" "  type="radio" name="gender" className="input" value="men"></input>
          <label className="f-s">Men</label>
        </div>
 

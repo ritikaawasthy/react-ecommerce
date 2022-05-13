@@ -44,7 +44,7 @@ function ProductPage(){
             <span class="alert-close">&#10540;</span>
         </div>
         {
-          productState && <ProductList product={productState.products}></ProductList>
+          productState && <ProductList product={productState.filterProducts}></ProductList>
         }
       </article>
     </section>

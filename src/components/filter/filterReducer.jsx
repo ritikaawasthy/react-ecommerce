@@ -1,13 +1,23 @@
+
 const filterReducer=(state,action)=>{
   switch(action.type){
-    case "SET_PRODUCTS":
-    return({...state, products:action.payload})
+    case "SET_INITIAL_PRODUCTS":
+    return({products:action.payload, filterProducts: action.payload})
     case "FILTER_BY_CATEGORY":
-    return({...state, products:action.payload.filter((item)=>item.categoryName===action.option.category) , filter: {...state.filter,category: [...state.filter.category, action.option.category]}})
+    return({...state, filterProducts:state.products.filter((item)=>action.category.includes(item.categoryName))})
+    case "REMOVE_CATEGORY":
+    return({...state,
+    filterProducts:state.products.filter((item)=>action.remove===item.categoryName)
+    })
     case "SORT_PRICE_HIGH":
-    return({...state, filter: {...state.filter, price: {[action.type]: "on"}} ,products: state.products.sort((a,b)=>sortPriceComparision(a,b, action.type))});
+    return({...state,filterProducts: state.filterProducts.sort((a,b)=>sortPriceComparision(a,b, action.type))});
     case "SORT_PRICE_LOW":
-    return({...state, filter: {...state.filter, price: {[action.type]: "on"}}, products: state.products.sort((a,b)=>sortPriceComparision(a,b,action.type))});
+    return({...state,filterProducts: state.filterProducts.sort((a,b)=>sortPriceComparision(a,b,action.type))});
+    case "FILTER_BY_GENDER":
+    console.log(action.gender,state.filterProducts)
+    return({...state,filterProducts:state.filterProducts.filter((item)=>item.gender===action.gender)})
+    case "FILTER_BY_RATING":
+    return({...state,filterProducts:state.products.filter((item)=>item.rating===action.rating)})
   }
 }
 

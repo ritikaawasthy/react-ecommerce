@@ -31,7 +31,7 @@ function LandingPage() {
 
   <section className="slider-top">
     <h2 className="center-txt fw-reg primary-col">
-      <a className="head">Clothing</a>
+      <Link to="/product" className="head">Clothing</Link>
     </h2>
     <Carousel slideList={clothSlider} slideCount={2} autoplay={false}/>
   </section>

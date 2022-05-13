@@ -12,9 +12,9 @@ function Navbar(){
   return(
     <header>
       <nav className="nav">
-        <div className="start">
+        <Link to="/" className="start">
           <img src={navLogo} className="icon" width={250} alt="logo"></img>
-        </div>
+        </Link>
         <ul className="list list-inline f-m primary-col fl-center">
           <li >
             <div className="input-container ">

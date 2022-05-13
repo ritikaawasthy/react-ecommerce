@@ -16,11 +16,7 @@ function ProductPage(){
       try{
         const response= await axios.get(`/api/products`);
         if(categoryName){
-          productDispatch({
-            type: "FILTER_BY_CATEGORY",
-            payload: response.data.products,
-            option: {category: categoryName}
-          })
+          productDispatch({category:[categoryName],payload: response.data.products,type: "FILTER_BY_CATEGORY_INITIAL"})
         }else{
           productDispatch({
             type: "SET_PRODUCTS",

@@ -1,0 +1,39 @@
+.img-responsive{
+  width:100%;
+  height:auto;
+}
+
+.img-round{
+  border-radius: 50%;
+}
+
+.img-square-round{
+    border-radius: 50%;
+}
+
+.img-landscape-round{
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.img-landscape-round>img{
+  width: auto;
+  height: 100%;
+}
+
+.img-s{
+ width: 8rem;
+ height: autof;
+}
+
+.img-m{
+width: 16rem;
+}
+
+.img-l{
+width: 32rem;
+}
+
+.img-xl{
+width: 64rem;
+}

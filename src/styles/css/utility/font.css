@@ -1,0 +1,66 @@
+h1{
+   font-size: 3rem;
+}
+
+h2{
+  font-size: 2.5rem;
+}
+
+h3{
+  font-size: 2rem;
+}
+h4{
+  font-size: 1.5rem;
+}
+h5{
+  font-size: 1rem;
+}
+h6{
+  font-size: 0.5rem;
+}
+
+.f-xs{
+  font-size: 0.8rem;
+}
+
+.f-s{
+  font-size: 1rem;
+}
+
+.f-m{
+  font-size: 1.5rem;
+}
+.f-l{
+  font-size: 2rem;
+}
+.f-xl{
+  font-size: 2.5rem;
+}
+
+.f-xxl{
+  font-size: 3rem;
+}
+
+.fw-li{
+  font-weight: 300;
+}
+
+.fw-reg{
+  font-weight: 400;
+}
+
+.fw-med{
+  font-weight: 600;
+}
+
+.fw-b{
+  font-weight: 700;
+}
+
+.fw-bb{
+  font-weight: 900;
+}
+
+.f-center{
+  text-align: center;
+}

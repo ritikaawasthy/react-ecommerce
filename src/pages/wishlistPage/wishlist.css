@@ -1,0 +1,10 @@
+.wishlist-container{
+  padding:0.5rem 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  min-height: 100vh;
+  max-height: fit-content;
+  justify-content: center;
+  align-items: flex-start;
+}

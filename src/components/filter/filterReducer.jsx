@@ -3,6 +3,8 @@ const filterReducer=(state,action)=>{
   switch(action.type){
     case "SET_INITIAL_PRODUCTS":
     return({products:action.payload, filterProducts: action.payload})
+    case "FILTER_BY_CATEGORY_INITIAL":
+    return({...state,filterProducts:action.payload.filter((item)=>action.category.includes(item.categoryName))})
     case "FILTER_BY_CATEGORY":
     return({...state, filterProducts:state.products.filter((item)=>action.category.includes(item.categoryName))})
     case "REMOVE_CATEGORY":

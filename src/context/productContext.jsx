@@ -4,17 +4,7 @@ import axios from "axios";
 const ProductContext=createContext();
 
 const ProductProvider=({children})=>{
-
-  const [productState, productDispatch]= useReducer(filterReducer, {
-    filter:{
-      category:"",
-      price: {
-        SORT_PRICE_HIGH: false,
-        SORT_PRICE_LOW: false
-      },
-      rating: "",
-    },
-    products: []
+  const [productState, productDispatch]= useReducer(filterReducer, {products: [], filterProducts:[]
   });
 
   useEffect(()=>{
@@ -22,7 +12,7 @@ const ProductProvider=({children})=>{
       try{
         const response= await axios.get(`/api/products`);
         productDispatch({
-          type: "SET_PRODUCTS",
+          type: "SET_INITIAL_PRODUCTS",
           payload:response.data.products })
       }catch(error){
         console.log(error)
